@@ -1,5 +1,11 @@
 {% extends "production/header.html" %}
 
 {% block content %}
-<p>This is just to test</p>
+
+
+    {% for c in content %}
+    <p>{{c}}</p>
+    {% endfor %}
+
+
 {% endblock %}

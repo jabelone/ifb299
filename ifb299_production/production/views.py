@@ -6,8 +6,11 @@ from django.shortcuts import render
 
 
 def index(request):
-    return render(request, 'production/home.html')
+    return render(request, 'production/header.html')
 
+
+def import1(request):
+    return render(request, 'production/home.html', {'content': ['aefawfawf']})
 
 
 

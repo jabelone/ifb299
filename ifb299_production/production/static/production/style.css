@@ -64,11 +64,20 @@ nav ul.gnb { list-style:none; overflow:hidden; list-style:none; background:#555;
 
 article {
 	background-color:whitesmoke;
-	float: left;
-	width: 100%;
+	float: right;
+	width: 71%;
 	padding: 2%;
 }
 
+aside {
+    float: right;
+	background: rgb(119,136,153);
+    text-align: center;
+    padding-top: 10%;
+    font-size: 25px;
+	width: 25%;
+
+}
 /*footer*/
 
 footer {
