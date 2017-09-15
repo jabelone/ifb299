@@ -1,0 +1,151 @@
+/*reset*/
+@charset "utf-8";
+*{margin:0;padding:0;}
+a{text-decoration:none; color:#000;
+}
+
+
+/*set headings*/
+h1{
+    font-family:sans-serif;
+    font-size: 30px;
+}
+h2{
+    font-family:sans-serif;
+    font-size: 25px;
+}
+h3{
+    font-family:sans-serif;
+    font-size: 23px;
+}
+
+
+
+
+
+header{ margin:0 auto; height:70px; 
+	background: gray;
+	padding: 10px;
+    padding-top: 30px;
+	color: black;
+	font-size: 39px;
+    font-weight: bold;
+	font-family: 'Great Vibes', cursive;
+    }
+
+
+
+
+/*main body*/
+
+
+
+body{background: rgb(220,220,220);width: 900px; margin: 0 auto;}
+
+nav ul.gnb { list-style:none; overflow:hidden; list-style:none; background:#555; }
+.gnb li { float:left; }
+.gnb li a { text-decoration:none; color:#fff; font-size:18px; font-family:sans-serif; display:block; padding:10px 15px; }
+.gnb li a:hover { background:#5c917a; font-weight:bold; }
+
+
+#content{    
+    display: flex;
+}
+
+
+.sidebar-image{
+    width: 160px;
+    height:200px;
+    margin-bottom: 50px;
+
+}
+
+
+
+article {
+	background-color:whitesmoke;
+	float: left;
+	width: 100%;
+	padding: 2%;
+}
+
+/*footer*/
+
+footer {
+	background: rgb(192,192,192);
+	color: black;
+	padding: 30px;
+	text-align: center;
+}
+
+/*home page*/
+
+.home-image1{height: 300px; float: right; 
+    margin-left: 20px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+
+.home-image2{height: 150px; float: right; 
+    margin-left: 20px;
+    margin-right: 30px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+
+.ingredients {
+    margin-left: 25px;
+}
+
+.procedure{
+    margin-left: 25px;
+}
+
+
+/*origin page*/
+
+.origin-image1{height: 400px; float: left; 
+    margin-right: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/*review page*/
+
+.review-image1{height: 400px;
+    margin-bottom: 30px;
+    
+}
+.review-table{text-align: center;}
+#comment-column{text-align: left;}
+
+.reviewnum{
+    float: right;
+}
+
+#wrap{
+    margin-top: 50px;
+}
+
+.review-image1{
+    height: 250px;
+    width: 400px;
+}
+
+.rating-image{
+    height: 20px;
+    width: 60px;
+    margin-right: 10px;
+}
+.profile-image{
+    padding-right: 30px;
+
+    height: 70px;
+    width: 60px;
+    float:left;
+    
+}
+
+
+
+
