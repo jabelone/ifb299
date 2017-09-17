@@ -20,8 +20,8 @@
 
     <nav>
 		<ul class="gnb">
-    		<li><a href="#">Sign Up</a></li>
-            <li><a href="#">Sign In</a></li>
+    		<li><a href="#">Sign In</a></li>
+            <li><a href="#">Sign Up</a></li>
             <li><a href="#">View</a></li>
     	</ul>
     </nav>
@@ -29,12 +29,28 @@
     <section id="content">
 
 				<aside>
-
+                    Recommended For You
 				</aside>
+
+
+
 
 				<article class="home-content">
 
-                    <br><h1>Sign Up</h1><hr><br>
+                    <br><h1>Sign In</h1><hr><br>
+    <form method="POST">
+          <div class="form-group">
+    <label for="{{ form.username.id_for_label }}">ID</label>
+    <input class="form-control" id="{{ form.username.id_for_label }}" maxlength="15" name="{{ form.username.html_name }}" type="text" />
+  </div>
+  <div class="form-group">
+    <label for="{{ form.password.id_for_label }}">Password</label>
+    <input class="form-control" id="{{ form.password.id_for_label }}" maxlength="120" name="{{ form.password.html_name }}" type="password" />
+  </div>
+        <button type="submit">Log in</button>
+    </form>
+
+
 
                     <div>
                         {% block content %}

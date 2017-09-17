@@ -3,14 +3,23 @@ from django.db import models
 # Create your models here.
 
 
-class User(models.Model):
+#class Login(models.Model):
+#    name = models.CharField(max_length=50)
+#    password = models.CharField(max_length=50)
+#    phone = models.CharField(max_length=30)
+#    email = models.EmailField()
+#    address = models.CharField(max_length=100)
+#    type = models.CharField(max_length=30)
 
-    name = models.TextField()
-    password = models.TextField()
-    phone = models.TextField()
-    email = models.EmailField()
-    address = models.TextField()
-    type = models.TextField()
+#    def __str__(self):
+#        return self.name+' - '+self.type
 
-    def __str__(self):
-       return self.name
+
+
+
+
+
+
+
+
+
