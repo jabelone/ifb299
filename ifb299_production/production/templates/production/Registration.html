@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Smart City</title>
+    <link href="https://fonts.googleapis.com/css?family=Great+Vibes|Molle:400i" rel="stylesheet">
+    {% load staticfiles %}
+<link rel='stylesheet' href="{% static 'production/style.css'%}" type='text/css' />
+
+    <meta name="description" content="Smart City">
+</head>
+<body>
+    <main>
+
+
+    <header id="top">
+        <a href="header.html">Smart City</a>
+    </header>
+
+    <section id="content">
+
+
+				<article class="home-content">
+
+                    <br><h1>Sign Up</h1><hr><br>
+    <form method="POST">
+          <div class="form-group">
+    <label for="{{ form.username.id_for_label }}">Username</label>
+    <input class="form-control" id="{{ form.username.id_for_label }}" maxlength="15" name="{{ form.username.html_name }}" type="text" />
+  </div>
+          <div class="form-group">
+    <label for="{{ form.email.id_for_label }}">Email Address</label>
+    <input class="form-control" id="{{ form.email.id_for_label }}" maxlength="15" name="{{ form.email.html_name }}" type="text" />
+  </div>
+        <div class="form-group">
+    <label for="{{ form.mobile.id_for_label }}">Phone Number</label>
+    <input class="form-control" id="{{ form.mobile.id_for_label }}" maxlength="10" name="{{ form.mobile.html_name }}" type="text" />
+  </div>
+      <div class="form-group">
+     <form action="/action_page.php">
+       <select name="usertypes">
+           <option value="student">Please select one of the following</option>
+    <option value="student">Student</option>
+    <option value="tourist">Tourist</option>
+    <option value="business">Business</option>
+  </select>
+</form>
+      </div>
+  <div class="form-group">
+    <label for="{{ form.password.id_for_label }}">Password</label>
+    <input class="form-control" id="{{ form.password.id_for_label }}" maxlength="120" name="{{ form.password.html_name }}" type="password" />
+  </div>
+      <div class="form-group">
+    <label for="{{ form.passwordtwo.id_for_label }}">Confirm Password</label>
+    <input class="form-control" id="{{ form.passwordtwo.id_for_label }}" maxlength="15" name="{{ form.passwordtwo.html_name }}" type="password" />
+  </div>
+    <p>By creating an account you agree to our Terms & Privacy.</p>
+        <button type="submit">Sign Up</button>
+    </form>
+
+
+
+                    <div>
+                        {% block content %}
+                        {% endblock %}
+                    </div>
+
+
+
+
+                    <br><br>
+
+                    <a href="#top">TOP</a>
+
+
+				</article>
+
+
+
+        </section>
+
+            <footer>
+				&copy; 2017 IFB299 Web Application
+			</footer>
+
+
+    </main>
+
+</body>
+</html>
