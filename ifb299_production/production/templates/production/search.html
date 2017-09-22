@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Smart City</title>
+    <link href="https://fonts.googleapis.com/css?family=Great+Vibes|Molle:400i" rel="stylesheet">
+    {% load staticfiles %}
+<link rel='stylesheet' href="{% static 'production/style.css'%}" type='text/css' />
+
+    <meta name="description" content="Smart City">
+</head>
+<body>
+    <main>
+
+
+    <header id="top">
+        <a href="header.html">Smart City</a>
+    </header>
+
+    <section id="content">
+
+
+				<article class="home-content">
+
+                    <br><h1>Search</h1><hr><br>
+    <form method="POST">
+          <div class="form-group">
+    <label for="{{ form.username.id_for_label }}">Search Query </label>
+    <input class="form-control" id="{{ form.username.id_for_label }}" maxlength="15" name="{{ form.username.html_name }}" type="text" />
+  </div>
+
+                    <div>
+                        {% block content %}
+                        {% endblock %}
+                    </div>
+
+
+
+
+                    <br><br>
+
+                    <a href="#top">TOP</a>
+
+
+				</article>
+
+
+
+        </section>
+
+            <footer>
+				&copy; 2017 IFB299 Web Application
+			</footer>
+
+
+    </main>
+
+</body>
+</html>
