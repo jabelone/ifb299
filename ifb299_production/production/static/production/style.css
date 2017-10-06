@@ -49,6 +49,7 @@ nav ul.gnb { list-style:none; overflow:hidden; list-style:none; background:#555;
 
 
 #content{    
+    display: flex;
 }
 
 
