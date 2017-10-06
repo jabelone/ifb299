@@ -13,7 +13,7 @@ def signup(request):
             raw_password = form.cleaned_data.get('password1')
             user = authenticate(username=username, password=raw_password)
             login(request, user)
-            return redirect('/loggedin')
+            return redirect('/home')
     else:
         form = UserCreationForm()
     return render(request, 'production/signup.html', {'form': form})
@@ -21,10 +21,10 @@ def signup(request):
 def signin(request):
     return render(request, 'registration/login.html')
 
-def index(request):
+def error(request):
     return HttpResponse("Oops. This shouldn't be possible. You've entered a URL that's not valid.")
 
-def loggedin(request):
+def home(request):
     return render(request, 'production/home.html')
 
 def loggedout(request):
