@@ -23,7 +23,7 @@ def signup(request):
             return redirect('/')
 
     else:
-        user_form = UserForm()
+        user_form = UserCreationForm()
         profile_form = ProfileForm()
 
     return render(request, 'production/signup.html', {'user_form': user_form, 'profile_form': profile_form})
