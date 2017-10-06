@@ -39,3 +39,6 @@ def home(request):
 
 def loggedout(request):
     return render(request, 'production/loggedout.html')
+
+def student(request):
+    return render(request, 'production/student.html')

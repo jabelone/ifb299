@@ -3,6 +3,7 @@ from . import views
 from django.contrib.auth import views as auth_views
 
 urlpatterns = [
+    url(r'^student/$', views.student, name='student'),
     url(r'^signin/$', auth_views.login, name='signin'),
     url(r'^signup/$', views.signup, name='signup'),
     url(r'^signout/$', auth_views.logout, {'next_page': '/loggedout'}, name='logout'),
