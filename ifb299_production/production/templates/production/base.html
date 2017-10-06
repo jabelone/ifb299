@@ -1,44 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Smart City</title>
-    <link href="https://fonts.googleapis.com/css?family=Great+Vibes|Molle:400i" rel="stylesheet">
-    {% load staticfiles %}
-<link rel='stylesheet' href="{% static 'production/style.css'%}" type='text/css' />
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>{% block title %}Smart Cities{% endblock %}</title>
+  {% load staticfiles %}
 
-    <meta name="description" content="Smart City">
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="{% static 'production/css/materialize.css'%}" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="{% static 'production/css/style.css'%}" type="text/css" rel="stylesheet" media="screen,projection"/>
 </head>
 <body>
-    <main>
+  <nav class="light-blue lighten-1" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo"><img id="logo-image" src="{% static 'production/img/brisbane.png'%}"></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="/">Home</a></li>
+        <li><a href="/signin">Sign In</a></li>
+        <li><a href="/signup">Sign Up</a></li>
+        <li><a href="/signout">Sign Out</a></li>
+      </ul>
 
+      <ul id="nav-mobile" class="side-nav">
+        <li><a href="#">Navbar Link</a></li>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
 
-    <header id="top">
-        <a href="">Smart City</a>
-    </header>
-
-
-    <nav>
-		<ul class="gnb">
-    		<li><a href="/signin">Sign In</a></li>
-            <li><a href="/signup">Sign Up</a></li>
-            <li><a href="/logout">Log Out</a></li>
-    	</ul>
-    </nav>
-
-    <section id="content">
-
+  <div class="container">
+    <div class="section">
         {% block content %}
         {% endblock %}
+    </div>
+    <br><br>
+  </div>
 
-    </section>
+  <footer class="page-footer orange">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Need Help?</h5>
+          <p class="grey-text text-lighten-4">Use one of the options below to get in touch.</p>
+          <p class="grey-text text-lighten-4">Telephone: <a href="tel:131234">131234</a></p>
+          <p class="grey-text text-lighten-4">Email: <a href="help@lel.com">help@lel.com</a></p>
 
-            <footer>
-				&copy; 2017 IFB299 Web Application
-			</footer>
+
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">FAQ</h5>
+          <ul>
+            <li><a class="white-text" href="#!">How to...</a></li>
+            <li><a class="white-text" href="#!">What if...</a></li>
+            <li><a class="white-text" href="#!">Can I...</a></li>
+            <li><a class="white-text" href="#!">Lel...</a></li>
+          </ul>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Connect</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">IFB299 Group</a>
+      </div>
+    </div>
+  </footer>
 
 
-    </main>
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="{% static 'production/js/materialize.js'%}"></script>
+  <script src="{% static 'production/js/init.js'%}"></script>
 
-</body>
+  </body>
 </html>
