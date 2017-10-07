@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+cd /var/www/github-webhooks-listener/
+screen -S webhook sudo node /var/www/github-webhooks-listener/index.js
