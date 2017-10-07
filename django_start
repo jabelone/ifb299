@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+cd /var/www/ifb299/ifb299_production
+screen -S django sudo python3 manage.py runserver 0:80
