@@ -1,8 +1,9 @@
 {% extends 'production/base.html' %}
 
-{% block content %}
-    <br><h1>Sign In</h1><hr><br>
+{% block title %}Sign In{% endblock %}
+{% block page_title %}Sign In{% endblock %}
 
+{% block content %}
     <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
