@@ -1,10 +1,4 @@
-/* Custom Stylesheet */
-/**
- * Use this file to override Materialize files so you can update
- * the core Materialize files in the future
- *
- * Made By MaterializeCSS.com
- */
+/* Custom CSS (mostly by Jaimyn lol) */
 
 .icon-block {
   padding: 0 15px;
@@ -22,8 +16,56 @@ ul.right {
     margin-top: 25px;
 }
 
+#desktop_greeting {
+    margin: 0;
+    padding: 0px 15px;
+}
+
+#mobile_greeting {
+    color: rgba(0, 0, 0, 0.87);
+    padding: 10px 32px;
+}
+
+.menu-item {
+    font-size: 1.5em;
+}
+
+.header {
+    margin-bottom: 0;
+}
+
+.section {
+    padding-top: 0;
+}
+
+footer a {
+    color: white;
+    text-decoration: underline;
+}
+
+nav .button-collapse {
+    padding-top: 10px;
+}
+
+form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+
+/* Responsive Stuff */
+
 @media only screen and (min-width: 601px) {
     nav {
         height: 120px;
+    }
+}
+
+@media only screen and (max-width: 601px) {
+    nav {
+        height: 75px;
+    }
+    #logo-image {
+        max-height: 55px;
     }
 }
