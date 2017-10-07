@@ -3,7 +3,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
-  <title>{% block title %}Smart Cities{% endblock %}</title>
+  <title>{% block title %}Smart Cities{% endblock %} | Smart Cities</title>
   {% load staticfiles %}
 
   <!-- CSS  -->
@@ -15,20 +15,43 @@
   <nav class="light-blue lighten-1" role="navigation">
     <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo"><img id="logo-image" src="{% static 'production/img/brisbane.png'%}"></a>
       <ul class="right hide-on-med-and-down">
-        <li><a href="/">Home</a></li>
-        <li><a href="/signin">Sign In</a></li>
-        <li><a href="/signup">Sign Up</a></li>
-        <li><a href="/signout">Sign Out</a></li>
+        <li><a class="menu-item" href="/">Home</a></li>
+        {% if not user.is_authenticated %}
+          <li><a class="menu-item" href="/signin">Sign In</a></li>
+          <li><a class="menu-item" href="/signup">Sign Up</a></li>
+        {% endif %}
+
+        {% if user.is_authenticated %}
+          <li><a class="menu-item" href="/signout">Sign Out</a></li>
+          <li><p class="menu-item" class="user_greeting">Hi, {{ user.username }}</p></li>
+        {% endif %}
+
       </ul>
 
       <ul id="nav-mobile" class="side-nav">
-        <li><a href="#">Navbar Link</a></li>
+        {% if user.is_authenticated %}
+          <li><p class="menu-item-mobile" id="mobile_greeting" class="user_greeting">Hi, {{ user.username }}</p></li>
+        {% endif %}
+
+        <li><a class="menu-item-mobile" href="/">Home</a></li>
+
+        {% if not user.is_authenticated %}
+          <li><a class="menu-item-mobile" href="/signin">Sign In</a></li>
+          <li><a class="menu-item-mobile" href="/signup">Sign Up</a></li>
+        {% endif %}
+
+        {% if user.is_authenticated %}
+          <li><a class="menu-item-mobile" href="/signout">Sign Out</a></li>
+        {% endif %}
       </ul>
       <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
     </div>
   </nav>
 
   <div class="container">
+    <div class="header">
+      <h1 class="header center orange-text">{% block page_title %}Smart Cities{% endblock %}</h1>
+    </div>
     <div class="section">
         {% block content %}
         {% endblock %}
