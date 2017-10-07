@@ -8,6 +8,8 @@
     {% csrf_token %}
     {{ user_form.as_p }}
     {{ profile_form.as_p }}
-    <button type="submit">Sign up</button>
+    <button class="btn waves-effect waves-light" type="submit" name="signup">Sign Up
+        <i class="material-icons right">arrow_forward</i>
+    </button>
 </form>
 {% endblock %}

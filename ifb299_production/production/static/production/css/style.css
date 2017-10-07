@@ -1,3 +1,5 @@
+/* Custom CSS (mostly by Jaimyn lol) */
+
 .icon-block {
   padding: 0 15px;
 }
@@ -14,7 +16,7 @@ ul.right {
     margin-top: 25px;
 }
 
-.user_greeting {
+#desktop_greeting {
     margin: 0;
     padding: 0px 15px;
 }
@@ -34,6 +36,15 @@ ul.right {
 
 .section {
     padding-top: 0;
+}
+
+footer a {
+    color: white;
+    text-decoration: underline;
+}
+
+nav .button-collapse {
+    padding-top: 10px;
 }
 
 
