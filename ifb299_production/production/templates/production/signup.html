@@ -1,7 +1,9 @@
 {% extends 'production/base.html' %}
 
+{% block title %}Sign Up{% endblock %}
+{% block page_title %}Sign Up{% endblock %}
+
 {% block content %}
-<h2>Sign up</h2>
 <form method="post">
     {% csrf_token %}
     {{ user_form.as_p }}
