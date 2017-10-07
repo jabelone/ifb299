@@ -6,7 +6,7 @@ from production.forms import *
 
 def signup(request):
     if request.method == 'POST':
-        user_form = UserCreationForm(request.POST)
+        user_form = SignUpForm(request.POST)
         profile_form = ProfileForm(request.POST)
         if user_form.is_valid() and profile_form.is_valid():
             new_user = user_form.save()
@@ -23,7 +23,7 @@ def signup(request):
             return redirect('/')
 
     else:
-        user_form = UserCreationForm()
+        user_form = SignUpForm()
         profile_form = ProfileForm()
 
     return render(request, 'production/signup.html', {'user_form': user_form, 'profile_form': profile_form})
