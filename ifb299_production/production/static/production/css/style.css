@@ -28,6 +28,17 @@ ul.right {
     font-size: 1.5em;
 }
 
+.header {
+    margin-bottom: 0;
+}
+
+.section {
+    padding-top: 0;
+}
+
+
+/* Responsive Stuff */
+
 @media only screen and (min-width: 601px) {
     nav {
         height: 120px;

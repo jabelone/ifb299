@@ -5,62 +5,53 @@
 
 {% block content %}
 <div class="section no-pad-bot" id="index-banner">
-    <div class="container">
-        <div class="row center">
-            <h5 class="header col s12 light">Smart Cities is a web based system which stores
-                information about Brisbane city. Currently, the following account types are supported: Toursits,
-                Students and Businessman.
-            </h5>
-            <h5>To sign up, press get started below.</h5>
-        </div>
-        <div class="row center">
-            <a href="/signup" id="download-button" class="btn-large waves-effect waves-light orange">Get Started</a>
-        </div>
-        <br><br>
+    <div class="row center">
+        <h5 class="header col s12 light">Smart Cities is a web based system which stores
+            information about Brisbane city. Currently, the following account types are supported: Toursits,
+            Students and Businessman.
+        </h5>
     </div>
 </div>
 
 <h1 class="header center orange-text">Features</h1>
-<h5 class="header col s12 light">When an existing user logs into the system, the user should be able to view Brisbane
-    city information based on the user’s type. <strong>(See Below)</strong></h5><br><br>
-<!--   Icon Section   -->
+<div class="row center">
+    <h5 class="header col s12 light">When a user logs into the system, the user can view Brisbane city
+        information based on the user’s type. <strong>(See Below)</strong></h5><br>
+</div>
 <div class="row">
     <div class="col s12 m4">
         <div class="icon-block">
-            <!--   Icon Section
-          <h2 class="center light-blue-text"><i class="material-icons">flash_on</i></h2>
--->
+            <h2 class="center light-blue-text"><i class="material-icons">school</i></h2>
             <h5 class="center">Student</h5>
 
-            <p class="light">When a student logs into the system, the student should be able to view colleges, libraries
-                and city information. </p>
-        </div>
-    </div>
-
-    <div class="col s12 m4">
-        <div class="icon-block">
-            <!--   Icon Section
-
-<h2 class="center light-blue-text"><i class="material-icons">group</i></h2>
--->
-            <h5 class="center">Businessman</h5>
-
-            <p class="light">When a businessman logs into the system, the businessman should be able to view hotels,
-                industries and city information. </p>
-        </div>
-    </div>
-
-    <div class="col s12 m4">
-        <div class="icon-block">
-            <!--   Icon Section
-
-<h2 class="center light-blue-text"><i class="material-icons">settings</i></h2>
--->
-            <h5 class="center">Tourist</h5>
-
-            <p class="light">When a tourist logs into the system, the tourist should be able to view hotels and city
+            <p class="light">When a student logs into the system, they can see colleges, libraries and other city
                 information. </p>
         </div>
     </div>
+
+    <div class="col s12 m4">
+        <div class="icon-block">
+            <h2 class="center light-blue-text"><i class="material-icons">business_center</i></h2>
+            <h5 class="center">Business</h5>
+
+            <p class="light">When a business person logs into the system, they can view information about hotels,
+                industries
+                and other city information. </p>
+        </div>
+    </div>
+
+    <div class="col s12 m4">
+        <div class="icon-block">
+            <h2 class="center light-blue-text"><i class="material-icons">flight_takeoff</i></h2>
+            <h5 class="center">Tourist</h5>
+            <p class="light">When a tourist logs into the system, the tourist can see hotels and other city
+                information.</p>
+        </div>
+    </div>
+</div>
+
+<div class="row center">
+    <h5>To sign up, press get started below.</h5><br>
+    <a href="/signup" id="download-button" class="btn-large waves-effect waves-light orange">Get Started</a>
 </div>
 {% endblock %}
