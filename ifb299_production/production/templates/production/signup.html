@@ -3,11 +3,68 @@
 {% block title %}Sign Up{% endblock %}
 {% block page_title %}Sign Up{% endblock %}
 
+<style>
+span.special_class{color: #666;}
+</style>
 {% block content %}
+
 <form method="post">
+    <br>
+    <span class="required_fields" style="color:red">*</span> <span class="required_colour" style="color:blue">means mandatory to fill out for registration</span>
+    <br><br>
+
+
     {% csrf_token %}
-    {{ user_form.as_p }}
-    {{ profile_form.as_p }}
+
+    {% for field in user_form %}
+    <div>
+        <span class="required_fields" style="color:red">*</span>
+    <label for="{{ field.label }}">{{ field.label_tag }}</label>
+
+        {{ field }}
+
+
+
+        {% if 'Username' in field.label_tag %}
+        <span class="required_colour" style="color:blue">Username_description: </span>{{"Require 150 characters or fewer. Letters, digits and @/./+/-/_ only."}}
+                <br><br>
+
+        {% elif 'Password:' in field.label_tag %}
+            <span class="required_colour" style="color:blue">Password_description: </span><br>
+        <ol>
+            <li>Your password can't be too similar to your other personal information.</li><br>
+            <li>Your password must contain at least 8 characters.</li><br>
+            <li>Your password can't be a commonly used password.</li><br>
+            <li>Your password can't be entirely numeric.</li>
+        </ol>
+        <br><br>
+
+        {% elif 'Password confirmation' in field.label_tag %}
+          <span class="required_colour" style="color:blue">Password confirmation_description: </span>{{"Enter the same password as before, for verification."}}
+        <br><br>
+        {% else %}
+          {{""}}
+
+        {% endif %}
+
+
+
+
+
+    </div>
+
+    {% endfor %}
+
+
+    {% for field in profile_form %}
+    <div>
+        <span class="required_fields" style="color:red">*</span>
+    <label for="{{ field.label }}">{{ field.label_tag }}</label>
+        {{ field }}
+    </div>
+    {% endfor %}
+
+
     <button class="btn waves-effect waves-light" type="submit" name="signup">Sign Up
         <i class="material-icons right">arrow_forward</i>
     </button>
