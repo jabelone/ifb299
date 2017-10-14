@@ -22,6 +22,7 @@
         {% endif %}
 
         {% if user.is_authenticated %}
+          <li><a class="menu-item" href="/search">Find Info</a></li>
           <li><a class="menu-item" href="/signout">Sign Out</a></li>
           <li><p class="menu-item" id="desktop_greeting">Hi, {{ user.username }}</p></li>
         {% endif %}
@@ -41,6 +42,7 @@
         {% endif %}
 
         {% if user.is_authenticated %}
+          <li><a class="menu-item" href="/search">Find Info</a></li>
           <li><a class="menu-item-mobile" href="/signout">Sign Out</a></li>
         {% endif %}
       </ul>

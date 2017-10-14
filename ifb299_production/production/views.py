@@ -28,6 +28,9 @@ def signup(request):
 
     return render(request, 'production/signup.html', {'user_form': user_form, 'profile_form': profile_form})
 
+def search(request):
+    return render(request, 'production/search.html')
+
 def signin(request):
     return render(request, 'registration/login.html')
 
