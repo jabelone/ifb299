@@ -1,10 +1,27 @@
 /* Custom CSS (mostly by Jaimyn lol) */
 
-.icon-block {
-  padding: 0 15px;
+.asterisk {
+    color: red;
 }
+
+.chip {
+    margin: 5px 0;
+}
+
+.error-chip {
+    color: #F44336;
+}
+
+.errors {
+    margin: 20px 0;
+}
+
+.icon-block {
+    padding: 0 15px;
+}
+
 .icon-block .material-icons {
-	font-size: inherit;
+    font-size: inherit;
 }
 
 #logo-image {
@@ -52,7 +69,6 @@ form {
     margin: 0 auto;
 }
 
-
 /* Responsive Stuff */
 
 @media only screen and (min-width: 601px) {
@@ -65,6 +81,7 @@ form {
     nav {
         height: 75px;
     }
+
     #logo-image {
         max-height: 55px;
     }
