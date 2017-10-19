@@ -29,7 +29,8 @@ def signup(request):
     return render(request, 'production/signup.html', {'user_form': user_form, 'profile_form': profile_form})
 
 def search(request):
-    return render(request, 'production/search.html')
+    search_form = ProfileForm()
+    return render(request, 'production/search.html', {'search_form': search_form})
 
 def signin(request):
     return render(request, 'registration/login.html')

@@ -51,7 +51,14 @@
 </div>
 
 <div class="row center">
-    <h5>To sign up, press get started below.</h5><br>
-    <a href="/signup" id="download-button" class="btn-large waves-effect waves-light">Get Started</a>
+    {% if not user.is_authenticated %}
+        <h5>To sign up, press get started below.</h5><br>
+        <a href="/signup" id="download-button" class="btn-large waves-effect waves-light">Get Started</a>
+    {% endif %}
+
+    {% if user.is_authenticated %}
+        <h5>To search for info, click Search below.</h5><br>
+        <a href="/search" id="start-button" class="btn-large waves-effect waves-light">Search</a>
+    {% endif %}
 </div>
 {% endblock %}
