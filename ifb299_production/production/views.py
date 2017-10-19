@@ -29,7 +29,7 @@ def signup(request):
     return render(request, 'production/signup.html', {'user_form': user_form, 'profile_form': profile_form})
 
 def search(request):
-    search_form = ProfileForm()
+    search_form = SearchForm()
     return render(request, 'production/search.html', {'search_form': search_form})
 
 def signin(request):
