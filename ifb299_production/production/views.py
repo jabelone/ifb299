@@ -3,7 +3,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.views.generic import CreateView
-from production.models import *
+from production.forms import *
 
 
 
