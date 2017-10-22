@@ -31,41 +31,29 @@ def signup(request):
 
     return render(request, 'production/signup.html', {'user_form': user_form, 'profile_form': profile_form})
 
-def search(request):
-    search_form = ProfileForm()
-    return render(request, 'production/search.html', {'search_form': search_form})
-
 def signin(request):
     return render(request, 'registration/login.html')
-
 
 def error(request):
     return HttpResponse("Oops. This shouldn't be possible. You've entered a URL that's not valid.")
 
-
 def home(request):
     return render(request, 'production/home.html')
-
 
 def loggedout(request):
     return render(request, 'production/loggedout.html')
 
-
 def contacts(request):
     return render(request, 'production/contacts.html')
-
 
 def howto(request):
     return render(request, 'production/howto.html')
 
-
 def whatif(request):
     return render(request, 'production/whatif.html')
 
-
 def cani(request):
     return render(request, 'production/cani.html')
-
 
 def admins(request):
     if request.method == 'POST':
