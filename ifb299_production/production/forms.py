@@ -6,7 +6,7 @@ from production.models import *
 
 
 class SignUpForm(UserCreationForm):
-
+    user_types = forms.ChoiceField(choices=((None, ''), ('student', 'STUDENT'), ('tourist', 'TOURIST'), ('business', 'BUSINESS')))
     class Meta:
         model = User
         fields = ('first_name', 'last_name', 'username', 'email', )
