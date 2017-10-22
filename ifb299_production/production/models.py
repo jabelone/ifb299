@@ -6,14 +6,17 @@ from django.utils import timezone
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
+
     phone = models.CharField(max_length=30)
     address = models.CharField(max_length=100)
+    user_type = models.CharField(max_length=30)
 
 class Data(models.Model):
     author = models.ForeignKey('auth.User', default="none")
     title = models.CharField(max_length=200)
     short_description = models.CharField(max_length=100)
     long_descriptiion = models.TextField()
+    data_type = models.CharField(max_length=50)
     address = models.TextField()
     phone = models.CharField(max_length=50)
     email = models.EmailField()
