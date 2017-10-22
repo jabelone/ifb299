@@ -22,6 +22,7 @@
         {% endif %}
 
         {% if user.is_authenticated %}
+          <li><a class="menu-item" href="/search">Search</a></li>
           <li><a class="menu-item" href="/signout">Sign Out</a></li>
           <li><p class="menu-item" id="desktop_greeting">Hi, {{ user.username }}</p></li>
         {% endif %}
@@ -41,6 +42,7 @@
         {% endif %}
 
         {% if user.is_authenticated %}
+          <li><a class="menu-item" href="/search">Search</a></li>
           <li><a class="menu-item-mobile" href="/signout">Sign Out</a></li>
         {% endif %}
       </ul>
@@ -66,7 +68,7 @@
           <h5 class="white-text">Need Help?</h5>
           <p class="grey-text text-lighten-4">Use one of the options below to get in touch.</p>
           <p class="grey-text text-lighten-4">Telephone: <a href="tel:131234">131234</a></p>
-          <p class="grey-text text-lighten-4">Email: <a href="help@lel.com">help@lel.com</a></p>
+          <p class="grey-text text-lighten-4">Email: <a href="mailto:help@lel.com">help@lel.com</a></p>
 
 
         </div>
@@ -79,20 +81,11 @@
             <li><a class="white-text" href="#!">Lel...</a></li>
           </ul>
         </div>
-        <div class="col l3 s12">
-          <h5 class="white-text">Connect</h5>
-          <ul>
-            <li><a class="white-text" href="#!">Link 1</a></li>
-            <li><a class="white-text" href="#!">Link 2</a></li>
-            <li><a class="white-text" href="#!">Link 3</a></li>
-            <li><a class="white-text" href="#!">Link 4</a></li>
-          </ul>
-        </div>
       </div>
     </div>
     <div class="footer-copyright">
       <div class="container">
-      Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">IFB299 Group</a>
+      Made by <a class="orange-text text-lighten-3" href="/">IFB299 Group</a>
       </div>
     </div>
   </footer>
