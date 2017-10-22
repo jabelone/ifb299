@@ -3,67 +3,12 @@
 {% block title %}Sign Up{% endblock %}
 {% block page_title %}Sign Up{% endblock %}
 
-<style>
-span.special_class{color: #666;}
-</style>
 {% block content %}
-
 <form method="post">
-    <div class="errors">
-        {% if user_form.errors %}
-            {% for field in user_form %}
-                {% for error in field.errors %}
-                    <div class="chip error-chip">
-                        {{ error|escape }}
-                        <i class="close material-icons">close</i>
-                    </div>
-                {% endfor %}
-            {% endfor %}
-
-            {% for error in user_form.non_field_errors %}
-                <div class="chip">
-                    {{ error|escape }}
-                    <i class="close material-icons">close</i>
-                </div>
-            {% endfor %}
-        {% endif %}
-    </div>
-
-    <span class="asterisk">*</span> <span class="blue-text text-darken-2"> indicates mandatory fields</span>
-
     {% csrf_token %}
-    </button>
-
-    {% for field in user_form %}
-    <div>
-        <span class="asterisk">*</span> <label>{{ field.label_tag }}</label>
-        {% if 'Username' in field.label_tag %}
-        <br><span class="blue-text text-darken-2">Usernames require 150 characters or fewer. Letters, digits and
-        @/./+/-/_ only.</span>
-
-        {% elif 'Password:' in field.label_tag %}
-        <br><span class="blue-text text-darken-2">Your password can't be too similar to your other personal information,
-            smaller than 8 characters, a commonly used password or entirely numeric.</span>
-
-        {% elif 'Password confirmation' in field.label_tag %}
-        <br><span class="blue-text text-darken-2">Enter the same password as before, for verification.</span>
-
-        {% endif %}
-        {{ field }}
-    </div>
-
-    {% endfor %}
-
-
-    {% for field in profile_form %}
-    <div>
-        <span class="asterisk">*</span>
-        <label>{{ field.label_tag }}</label>
-        {{ field }}
-    </div>
-    {% endfor %}
-
-
+    {{ user_form.as_p }}
+    {{ profile_form.as_p }}
+    <input type="submit" value="Create"/>
     <button class="btn waves-effect waves-light" type="submit" name="signup">Sign Up
         <i class="material-icons right">arrow_forward</i>
     </button>

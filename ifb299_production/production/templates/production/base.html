@@ -19,7 +19,6 @@
         {% if not user.is_authenticated %}
           <li><a class="menu-item" href="/signin">Sign In</a></li>
           <li><a class="menu-item" href="/signup">Sign Up</a></li>
-<<<<<<< HEAD
           <li><a class="menu-item" href="/admins">Admin</a></li>
         {% endif %}
 
@@ -27,14 +26,6 @@
           <li><a class="menu-item" href="/signout">Sign Out</a></li>
           <li><p class="menu-item" id="desktop_greeting">Hi, {{ user.username }}</p></li>
           <li><a class="menu-item" href="/admins">Admin</a></li>
-=======
-        {% endif %}
-
-        {% if user.is_authenticated %}
-          <li><a class="menu-item" href="/search">Search</a></li>
-          <li><a class="menu-item" href="/signout">Sign Out</a></li>
-          <li><p class="menu-item" id="desktop_greeting">Hi, {{ user.username }}</p></li>
->>>>>>> master
         {% endif %}
 
       </ul>
@@ -49,20 +40,12 @@
         {% if not user.is_authenticated %}
           <li><a class="menu-item-mobile" href="/signin">Sign In</a></li>
           <li><a class="menu-item-mobile" href="/signup">Sign Up</a></li>
-<<<<<<< HEAD
           <li><a class="menu-item-mobile" href="/admins">Admin</a></li>
         {% endif %}
 
         {% if user.is_authenticated %}
           <li><a class="menu-item-mobile" href="/signout">Sign Out</a></li>
           <li><a class="menu-item-mobile" href="/admins">Admin</a></li>
-=======
-        {% endif %}
-
-        {% if user.is_authenticated %}
-          <li><a class="menu-item" href="/search">Search</a></li>
-          <li><a class="menu-item-mobile" href="/signout">Sign Out</a></li>
->>>>>>> master
         {% endif %}
       </ul>
       <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
@@ -86,13 +69,8 @@
         <div class="col l6 s12">
           <h5 class="white-text">Need Help?</h5>
           <p class="grey-text text-lighten-4">Use one of the options below to get in touch.</p>
-<<<<<<< HEAD
           <p class="grey-text text-lighten-4">Telephone: <a href="tel:55 555 555">55 555 555</a></p>
           <p class="grey-text text-lighten-4">Email: <a href="#!">Help@Me.com</a></p>
-=======
-          <p class="grey-text text-lighten-4">Telephone: <a href="tel:131234">131234</a></p>
-          <p class="grey-text text-lighten-4">Email: <a href="mailto:help@lel.com">help@lel.com</a></p>
->>>>>>> master
 
 
         </div>
@@ -106,7 +84,6 @@
 
           </ul>
         </div>
-<<<<<<< HEAD
         <div class="col l3 s12">
           <h5 class="white-text">Connect</h5>
           <ul>
@@ -115,13 +92,11 @@
             <li><a class="white-text" href="{% url 'signin' %}">Sign in</a></li>
           </ul>
         </div>
-=======
->>>>>>> master
       </div>
     </div>
     <div class="footer-copyright">
       <div class="container">
-      Made by <a class="orange-text text-lighten-3" href="/">IFB299 Group</a>
+      Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">IFB299 Group</a>
       </div>
     </div>
   </footer>
