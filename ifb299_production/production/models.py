@@ -1,26 +1,21 @@
 from django.db import models
+from django.contrib.auth.models import User
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 from django.utils import timezone
 
-class Login(models.Model):
-    name = models.CharField(max_length=50)
-    password = models.CharField(max_length=50)
+class Profile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     phone = models.CharField(max_length=30)
-    email = models.EmailField()
     address = models.CharField(max_length=100)
-    user_type = models.CharField(max_length=30)
-
-    def __str__(self):
-        return self.name+' - '+self.type
-
 
 class Data(models.Model):
     author = models.ForeignKey('auth.User', default="none")
     title = models.CharField(max_length=200)
     short_description = models.CharField(max_length=100)
     long_descriptiion = models.TextField()
-    data_type = models.CharField(max_length=50)
     address = models.TextField()
-    phone = models.CharField(max_length=10)
+    phone = models.CharField(max_length=50)
     email = models.EmailField()
 
     created_date = models.DateTimeField(default=timezone.now)
