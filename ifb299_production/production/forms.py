@@ -20,11 +20,10 @@ class SignUpForm(UserCreationForm):
         model = User
         fields = ('first_name', 'last_name', 'username', 'email', )
 
-class AdminsForm(UserCreationForm):
-    data_type = forms.ChoiceField(choices=DATA_TYPES, required=True )
+class AdminForm(forms.ModelForm):
     class Meta:
-        model = User
-        fields = ('first_name', 'last_name', 'username', 'email', 'data_type')
+        model = Data
+        fields = "__all__"
 
 class ProfileForm(forms.ModelForm):
     user_type = forms.ChoiceField(choices=USER_TYPES, required=True)
