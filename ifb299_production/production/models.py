@@ -18,20 +18,21 @@ class Data(models.Model):
     author = models.ForeignKey('auth.User', default="none")
     title = models.CharField(max_length=200)
     short_description = models.CharField(max_length=200)
-    long_descriptiion = models.TextField()
-    data_type = models.CharField(max_length=50)
+    long_description = models.TextField()
+    data_type = models.CharField(max_length=100)
     address = models.TextField()
-    phone = models.CharField(max_length=50)
+    phone = models.CharField(max_length=15)
     email = models.EmailField()
-    link = models.CharField(max_length=200)
-    map_link = models.CharField(max_length=500)
+    link = models.CharField(max_length=500)
+    map_link = models.TextField()
+    image_link = models.TextField()
 
     created_date = models.DateTimeField(default=timezone.now)
     edited_date = models.DateTimeField(default=timezone.now)
 
 
     # This is for the type specific info like department(s), industry type etc
-    def special_default(self):
+    def special_default():
         return {"data": "null"}
     special = models.TextField("", default=special_default)
 
