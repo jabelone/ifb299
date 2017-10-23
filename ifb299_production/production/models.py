@@ -13,6 +13,7 @@ class Profile(models.Model):
     phone = models.CharField(max_length=30)
     address = models.CharField(max_length=100)
     user_type = models.CharField(max_length=15, choices=TYPES)
+    is_admin = models.BooleanField()
 
 class Data(models.Model):
     author = models.ForeignKey('auth.User', default="none")
