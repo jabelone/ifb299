@@ -20,5 +20,9 @@ class AdminsForm(UserCreationForm):
 class ProfileForm(forms.ModelForm):
     class Meta:
         model = Profile
-        fields = ('phone', 'address')
+        fields = ('user_type', 'phone', 'address')
 
+class SearchForm(forms.ModelForm):
+    class Meta:
+        model = Data
+        fields = ('title', 'data_type')

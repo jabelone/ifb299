@@ -23,9 +23,10 @@
         {% endif %}
 
         {% if user.is_authenticated %}
+          <li><a class="menu-item" href="/search">Search</a></li>
+          <li><a class="menu-item" href="/admins">Admin</a></li>
           <li><a class="menu-item" href="/signout">Sign Out</a></li>
           <li><p class="menu-item" id="desktop_greeting">Hi, {{ user.username }}</p></li>
-          <li><a class="menu-item" href="/admins">Admin</a></li>
         {% endif %}
 
       </ul>
@@ -44,8 +45,9 @@
         {% endif %}
 
         {% if user.is_authenticated %}
-          <li><a class="menu-item-mobile" href="/signout">Sign Out</a></li>
+          <li><a class="menu-item" href="/search">Search</a></li>
           <li><a class="menu-item-mobile" href="/admins">Admin</a></li>
+          <li><a class="menu-item-mobile" href="/signout">Sign Out</a></li>
         {% endif %}
       </ul>
       <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
