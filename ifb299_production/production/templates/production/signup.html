@@ -9,48 +9,46 @@ span.special_class{color: #666;}
 {% block content %}
 
 <form method="post">
-    <br>
-    <span class="required_fields" style="color:red">*</span> <span class="required_colour" style="color:blue">means mandatory to fill out for registration</span>
-    <br><br>
+    <div class="errors">
+        {% if user_form.errors %}
+            {% for field in user_form %}
+                {% for error in field.errors %}
+                    <div class="chip error-chip">
+                        {{ error|escape }}
+                        <i class="close material-icons">close</i>
+                    </div>
+                {% endfor %}
+            {% endfor %}
 
+            {% for error in user_form.non_field_errors %}
+                <div class="chip">
+                    {{ error|escape }}
+                    <i class="close material-icons">close</i>
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+
+    <span class="asterisk">*</span> <span class="blue-text text-darken-2"> indicates mandatory fields</span>
 
     {% csrf_token %}
 
     {% for field in user_form %}
     <div>
-        <span class="required_fields" style="color:red">*</span>
-    <label for="{{ field.label }}">{{ field.label_tag }}</label>
-
-        {{ field }}
-
-
-
+        <span class="asterisk">*</span> <label>{{ field.label_tag }}</label>
         {% if 'Username' in field.label_tag %}
-        <span class="required_colour" style="color:blue">Username_description: </span>{{"Require 150 characters or fewer. Letters, digits and @/./+/-/_ only."}}
-                <br><br>
+        <br><span class="blue-text text-darken-2">Usernames require 150 characters or fewer. Letters, digits and
+        @/./+/-/_ only.</span>
 
         {% elif 'Password:' in field.label_tag %}
-            <span class="required_colour" style="color:blue">Password_description: </span><br>
-        <ol>
-            <li>Your password can't be too similar to your other personal information.</li><br>
-            <li>Your password must contain at least 8 characters.</li><br>
-            <li>Your password can't be a commonly used password.</li><br>
-            <li>Your password can't be entirely numeric.</li>
-        </ol>
-        <br><br>
+        <br><span class="blue-text text-darken-2">Your password can't be too similar to your other personal information,
+            smaller than 8 characters, a commonly used password or entirely numeric.</span>
 
         {% elif 'Password confirmation' in field.label_tag %}
-          <span class="required_colour" style="color:blue">Password confirmation_description: </span>{{"Enter the same password as before, for verification."}}
-        <br><br>
-        {% else %}
-          {{""}}
+        <br><span class="blue-text text-darken-2">Enter the same password as before, for verification.</span>
 
         {% endif %}
-
-
-
-
-
+        {{ field }}
     </div>
 
     {% endfor %}
@@ -58,8 +56,8 @@ span.special_class{color: #666;}
 
     {% for field in profile_form %}
     <div>
-        <span class="required_fields" style="color:red">*</span>
-    <label for="{{ field.label }}">{{ field.label_tag }}</label>
+        <span class="asterisk">*</span>
+        <label>{{ field.label_tag }}</label>
         {{ field }}
     </div>
     {% endfor %}
