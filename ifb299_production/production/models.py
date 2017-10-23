@@ -4,16 +4,12 @@ from django.db.models.signals import post_save
 from django.dispatch import receiver
 from django.utils import timezone
 
-
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
 
     phone = models.CharField(max_length=30)
     address = models.CharField(max_length=100)
     user_type = models.CharField(max_length=30)
-
-
-
 
 class Data(models.Model):
     author = models.ForeignKey('auth.User', default="none")
@@ -22,7 +18,7 @@ class Data(models.Model):
     long_descriptiion = models.TextField()
     data_type = models.CharField(max_length=50)
     address = models.TextField()
-    phone = models.CharField(max_length=10)
+    phone = models.CharField(max_length=50)
     email = models.EmailField()
 
     created_date = models.DateTimeField(default=timezone.now)

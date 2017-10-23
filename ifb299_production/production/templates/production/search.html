@@ -1,12 +1,21 @@
-{% extends 'production/base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Smart City</title>
+    <link href="https://fonts.googleapis.com/css?family=Great+Vibes|Molle:400i" rel="stylesheet">
+    {% load staticfiles %}
+<link rel='stylesheet' href="{% static 'production/style.css'%}" type='text/css' />
 
-{% block title %}Search{% endblock %}
-{% block page_title %}Search{% endblock %}
+    <meta name="description" content="Smart City">
+</head>
+<body>
+    <main>
 
-{% block content %}
 
-    <form method="post">
-    {% csrf_token %}
+    <header id="top">
+        <a href="header.html">Smart City</a>
+    </header>
 
         {% for field in search_form %}
     <div>
@@ -15,10 +24,6 @@
     </div>
     {% endfor %}
 
-    <button class="btn waves-effect waves-light" type="submit" name="login">Search
-        <i class="material-icons right">arrow_forward</i>
-    </button>
-    </form>
 
 <br>
 
