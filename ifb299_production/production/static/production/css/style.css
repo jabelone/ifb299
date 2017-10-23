@@ -12,6 +12,10 @@
     overflow-x: hidden;
 }
 
+.header h1 {
+    margin-bottom: 30px;
+}
+
 #search-form {
     margin-top: 10px;
     margin-bottom: 30px;
