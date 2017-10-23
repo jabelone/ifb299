@@ -1,5 +1,10 @@
 /* Custom CSS (mostly by Jaimyn lol) */
 
+#search-form {
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
 .info-map iframe {
     width:100%; min-height:300px;
 }

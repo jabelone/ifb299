@@ -4,13 +4,17 @@
 {% block page_title %}Search{% endblock %}
 
 {% block content %}
-
-{% for field in search_form %}
-    <div>
-        <label>{{ field.label_tag }}</label>
-        {{ field }}
-    </div>
-{% endfor %}
+<form id="search-form" method="post">
+    {% for field in search_form %}
+        <div>
+            <label>{{ field.label_tag }}</label>
+            {{ field }}
+        </div>
+    {% endfor %}
+    <button class="btn waves-effect waves-light" type="submit" name="search">Search
+        <i class="material-icons right">arrow_forward</i>
+    </button>
+</form>
 
 {% if data %}
     <div class="row">
