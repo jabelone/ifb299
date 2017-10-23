@@ -88,8 +88,10 @@
           <h5 class="white-text">Connect</h5>
           <ul>
             <li><a class="white-text" href="{% url 'contacts' %}">Contacts</a></li>
+            {% if user.is_authenticated %}
             <li><a class="white-text" href="{% url 'signup' %}">Sign up</a></li>
             <li><a class="white-text" href="{% url 'signin' %}">Sign in</a></li>
+            {% endif %}
           </ul>
         </div>
       </div>
