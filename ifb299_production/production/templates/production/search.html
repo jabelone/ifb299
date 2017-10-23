@@ -1,21 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Smart City</title>
-    <link href="https://fonts.googleapis.com/css?family=Great+Vibes|Molle:400i" rel="stylesheet">
-    {% load staticfiles %}
-<link rel='stylesheet' href="{% static 'production/style.css'%}" type='text/css' />
+{% extends 'production/base.html' %}
 
-    <meta name="description" content="Smart City">
-</head>
-<body>
-    <main>
-
-
-    <header id="top">
-        <a href="header.html">Smart City</a>
-    </header>
+{% block title %}Search{% endblock %}
+{% block page_title %}Search{% endblock %}
 
         {% for field in search_form %}
     <div>
@@ -24,9 +10,7 @@
     </div>
     {% endfor %}
 
-
-<br>
-
+{% block content %}
 <div class="row">
     <div class="col s12 m6 dismissable">
         <div class="card">
