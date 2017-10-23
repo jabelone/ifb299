@@ -3,9 +3,9 @@ from django.contrib.auth.models import User
 from django.utils import timezone
 
 USER_TYPES = (
-    ('TOURIST', 'Tourist'),
-    ('BUSINESS', 'Business'),
-    ('STUDENT', 'Student'),
+    ('Tourist', 'Tourist'),
+    ('Business', 'Business'),
+    ('Student', 'Student'),
 )
 
 DATA_TYPES = (
