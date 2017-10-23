@@ -33,6 +33,7 @@ class ProfileForm(forms.ModelForm):
         fields = ('phone', 'address', 'user_type')
 
 class SearchForm(forms.ModelForm):
+    user_type = forms.ChoiceField(choices=USER_TYPES, required=True)
     class Meta:
         model = Data
-        fields = ('title', 'data_type')
+        fields = ('user_type',)
