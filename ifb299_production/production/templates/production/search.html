@@ -11,12 +11,15 @@
             {{ field }}
         </div>
     {% endfor %}
-    <button class="btn waves-effect waves-light" type="submit" name="search">Search
+
+    {% csrf_token %}
+
+    <!--<button class="btn waves-effect waves-light" type="submit" name="search">Search
         <i class="mdi mdi-arrow-right-thick"></i>
-    </button>
+    </button>-->
 </form>
 
-{% if data %}
+{% if data and "first_request" not in data %}
     <div class="row">
         {% for item in data %}
 
@@ -78,6 +81,11 @@
 
         {% endfor %}
     </div>
+
+{% elif "first_request" not in data %}
+    <h4>Sorry, we couldn't find anything you were looking for. Please try a different query.</h4>
+{% else %}
+    <h4>Please select a category from the list above to search for it.</h4>
 {% endif %}
 
 {% endblock %}

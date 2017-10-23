@@ -4,15 +4,22 @@ from django.contrib.auth.models import User
 from production.models import Profile, Data
 
 USER_TYPES = (
-    ('TOURIST', 'Tourist'),
-    ('BUSINESS', 'Business'),
-    ('STUDENT', 'Student'),
+    ('Tourist', 'Tourist'),
+    ('Business', 'Business'),
+    ('Student', 'Student'),
 )
 
 DATA_TYPES = (
-    ('SCHOOL', 'School'),
-    ('Business', 'Business'),
-    ('TRANSPORT', 'Transport'),
+    ('Select Category', 'Select Category'),
+    ('College', 'College'),
+    ('Library', 'Library'),
+    ('Industry', 'Industry'),
+    ('Hotel', 'Hotel'),
+    ('Park', 'Park'),
+    ('Zoo', 'Zoo'),
+    ('Museum', 'Museum'),
+    ('Restaurant', 'Restaurant'),
+    ('Mall', 'Mall')
 )
 
 class SignUpForm(UserCreationForm):
@@ -32,7 +39,7 @@ class ProfileForm(forms.ModelForm):
         fields = ('phone', 'address', 'user_type')
 
 class SearchForm(forms.ModelForm):
-    user_type = forms.ChoiceField(choices=USER_TYPES, required=True)
+    data_type = forms.ChoiceField(choices=DATA_TYPES, required=True, widget=forms.Select(attrs={'onchange': 'submit();'}))
     class Meta:
         model = Data
-        fields = ('user_type',)
+        fields = ('data_type',)
