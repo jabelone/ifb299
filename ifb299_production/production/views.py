@@ -1,11 +1,8 @@
 from django.contrib.auth import login, authenticate
-from django.contrib.auth.forms import UserCreationForm
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
-from django.views.generic import CreateView
 from production.forms import *
-
-
+from production.models import Data
 
 def signup(request):
     if request.method == 'POST':
@@ -30,6 +27,10 @@ def signup(request):
         profile_form = ProfileForm()
 
     return render(request, 'production/signup.html', {'user_form': user_form, 'profile_form': profile_form})
+
+def search(request):
+    search_form = SearchForm()
+    return render(request, 'production/search.html', {'search_form': search_form, 'data': Data.objects.all()})
 
 def signin(request):
     return render(request, 'registration/login.html')
