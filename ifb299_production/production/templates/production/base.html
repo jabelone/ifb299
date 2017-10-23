@@ -7,7 +7,8 @@
   {% load staticfiles %}
 
   <!-- CSS  -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">-->
+  <link rel="stylesheet" href="//cdn.materialdesignicons.com/2.0.46/css/materialdesignicons.min.css">
   <link href="{% static 'production/css/materialize.css'%}" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="{% static 'production/css/style.css'%}" type="text/css" rel="stylesheet" media="screen,projection"/>
 </head>
@@ -23,6 +24,7 @@
 
         {% if user.is_authenticated %}
           <li><a class="menu-item" href="/search">Search</a></li>
+          {% if user.profile.is_admin %}<li><a class="menu-item" href="/data-admin">Data Admin</a></li>{% endif %}
           <li><a class="menu-item" href="/signout">Sign Out</a></li>
           <li><p class="menu-item" id="desktop_greeting">Hi, {{ user.username }}</p></li>
         {% endif %}

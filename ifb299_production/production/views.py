@@ -56,26 +56,13 @@ def whatif(request):
 def cani(request):
     return render(request, 'production/cani.html')
 
-def admins(request):
+def data_admin(request):
     if request.method == 'POST':
-        user_form = AdminsForm(request.POST)
-        profile_form = ProfileForm(request.POST)
-        if user_form.is_valid() and profile_form.is_valid():
-            new_user = user_form.save()
-            profile = profile_form.save(commit=False)
-
-            if profile.user_id is None:
-                profile.user_id = new_user.id
-            profile.save()
-
-            username = user_form.cleaned_data.get('username')
-            raw_password = user_form.cleaned_data.get('password1')
-            user = authenticate(username=username, password=raw_password)
-            login(request, user)
-            return redirect('/')
+        admin_form = AdminForm(request.POST)
+        if admin_form.is_valid():
+            new_data = admin_form.save()
 
     else:
-        user_form = AdminsForm()
-        profile_form = ProfileForm()
+        admin_form = AdminForm()
 
-    return render(request, 'production/admins.html', {'user_form': user_form, 'profile_form': profile_form})
+    return render(request, 'production/admins.html', {'admin_form': admin_form})
