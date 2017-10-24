@@ -4,15 +4,23 @@ from django.contrib.auth.models import User
 from production.models import Profile, Data
 
 USER_TYPES = (
-    ('TOURIST', 'Tourist'),
-    ('BUSINESS', 'Business'),
-    ('STUDENT', 'Student'),
+    ('Tourist', 'Tourist'),
+    ('Business', 'Business'),
+    ('Student', 'Student'),
 )
 
 DATA_TYPES = (
-    ('SCHOOL', 'School'),
-    ('Business', 'Business'),
-    ('TRANSPORT', 'Transport'),
+    ('Select Category', 'Select Category'), # Default placeholder
+    ('All Categories', 'All Categories'), # Needed when searching for all entries
+    ('College', 'College/Schools'),
+    ('Library', 'Library'),
+    ('Industry', 'Industry'),
+    ('Hotel', 'Hotel'),
+    ('Park', 'Park'),
+    ('Zoo', 'Zoo'),
+    ('Museum', 'Museum'),
+    ('Restaurant', 'Restaurant'),
+    ('Mall', 'Mall')
 )
 
 class SignUpForm(UserCreationForm):
@@ -20,11 +28,10 @@ class SignUpForm(UserCreationForm):
         model = User
         fields = ('first_name', 'last_name', 'username', 'email', )
 
-class AdminsForm(UserCreationForm):
-    data_type = forms.ChoiceField(choices=DATA_TYPES, required=True )
+class AdminForm(forms.ModelForm):
     class Meta:
-        model = User
-        fields = ('first_name', 'last_name', 'username', 'email', 'data_type')
+        model = Data
+        fields = "__all__"
 
 class ProfileForm(forms.ModelForm):
     user_type = forms.ChoiceField(choices=USER_TYPES, required=True)
@@ -33,7 +40,7 @@ class ProfileForm(forms.ModelForm):
         fields = ('phone', 'address', 'user_type')
 
 class SearchForm(forms.ModelForm):
-    user_type = forms.ChoiceField(choices=USER_TYPES, required=True)
+    data_type = forms.ChoiceField(choices=DATA_TYPES, required=True, widget=forms.Select(attrs={'onchange': 'submit();'}))
     class Meta:
         model = Data
-        fields = ('user_type',)
+        fields = ('data_type',)
