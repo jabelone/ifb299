@@ -1,5 +1,21 @@
 /* Custom CSS (mostly by Jaimyn lol) */
 
+.card-content #add, .card-content #edit {
+    padding: 40px;
+}
+
+.tabs .data-tab a{
+    font-size: 175%;
+}
+
+.tabs {
+    overflow-x: hidden;
+}
+
+.header h1 {
+    margin-bottom: 30px;
+}
+
 #search-form {
     margin-top: 10px;
     margin-bottom: 30px;
