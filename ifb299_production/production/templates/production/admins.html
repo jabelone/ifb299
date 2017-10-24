@@ -4,13 +4,35 @@
 {% block page_title %}Admin Dashboard{% endblock %}
 
 {% block content %}
-<form method="post">
-    {% csrf_token %}
-    {{ user_form.as_p }}
-    {{ profile_form.as_p }}
-    <input type="submit" value="Create"/>
-    <button class="btn waves-effect waves-light" type="submit" name="adduser">Add User
-        <i class="material-icons right">arrow_forward</i>
-    </button>
-</form>
+
+{% if submitted %}
+    <h2>Saved successfully.</h2>
+{% endif %}
+
+{% if user.profile.is_admin %}
+<div class="card-tabs data-card-tabs">
+    <ul class="tabs tabs-fixed-width">
+        <li class="tab data-tab"><a class="active" href="#add">Add Data</a></li>
+        <li class="tab data-tab"><a href="#edit">Edit Data</a></li>
+    </ul>
+</div>
+<div class="card-content grey lighten-4">
+    <div id="add">
+        <form method="post">
+            {% csrf_token %}
+            {{ admin_form.as_p }}
+
+            <button class="btn waves-effect waves-light" type="submit" name="adduser">Add Data Item
+                <i class="mdi mdi-arrow-right-thick"></i>
+            </button>
+        </form>
+    </div>
+    <div id="edit">
+        <h4>Coming Soon...</h4>
+    </div>
+</div>
+{% else %}
+    <h2>Error. You must have an administrative account to access this page.</h2>
+{% endif %}
+
 {% endblock %}

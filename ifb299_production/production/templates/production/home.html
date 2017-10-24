@@ -1,9 +1,74 @@
 {% extends 'production/base.html' %}
 
-{% block title %}Smart Cities{% endblock %}
-{% block page_title %}Smart Cities{% endblock %}
+{% block title %}{% if data %}Your Personal Dashboard{% else %}Smart Cities{% endif %}{% endblock %}
+{% block page_title %}{% if data %}Your Personal Dashboard{% else %}Smart Cities{% endif %}{% endblock %}
 
 {% block content %}
+
+{% if data %}
+    <div class="row">
+        {% for item in data %}
+
+            <div class="col s12 m6 dismissable">
+        <div class="card">
+            <div class="card-image">
+                <img src="{{ item.image_link }}">
+                <span class="card-title card-title-text">{{ item.title }}</span>
+                <span class="halfway-fab card-title waves-effect waves-light blue">
+                    {% if "School" in item.data_type or "College" in item.data_type %}<i class="mdi mdi-school"></i>
+                    {% elif "Library" in item.data_type %}<i class="mdi mdi-book-open-page-variant"></i>
+                    {% elif "Industry" in item.data_type %}<i class="mdi mdi-briefcase"></i>
+                    {% elif "Hotel" in item.data_type %}<i class="mdi mdi-hotel"></i>
+                    {% elif "Park" in item.data_type %}<i class="mdi mdi-tree"></i>
+                    {% elif "Zoo" in item.data_type %}<i class="mdi mdi-paw"></i>
+                    {% elif "Museum" in item.data_type %}<i class="mdi mdi-bone"></i>
+                    {% elif "Restaurant" in item.data_type %}<i class="mdi mdi-silverware"></i>
+                    {% elif "Mall" in item.data_type %}<i class="mdi mdi-cart"></i>
+                    {% else %}<i class="mdi mdi-bone"></i>{% endif %}
+                </span>
+            </div>
+            <div class="card-stacked">
+                <div class="card-content">
+                    <p>{{ item.short_description }}</p>
+                </div>
+                <ul class="collapsible" data-collapsible="accordion">
+                    <li>
+                        <div class="collapsible-header"><i class="mdi mdi-information-outline"></i>More Info</div>
+                        <div class="collapsible-body">
+                            <div class="card-tabs">
+                                <ul class="tabs tabs-fixed-width">
+                                    <li class="tab"><a class="active" href="#description{{ forloop.counter0 }}">
+                                        Description</a></li>
+                                    <li class="tab"><a href="#map{{ forloop.counter0 }}">Map</a></li>
+                                    <li class="tab"><a href="#contact{{ forloop.counter0 }}">Contact Info</a></li>
+                                </ul>
+                            </div>
+                            <div class="card-content grey lighten-4">
+                                <div id="description{{ forloop.counter0 }}">
+                                    <p>{{ item.long_description }}</p>
+                                </div>
+                                <div id="map{{ forloop.counter0 }}">
+                                    <div class="info-map">
+                                        <iframe src="{{ item.map_link }}" frameborder="0" style="border:0" allowfullscreen></iframe>
+                                    </div>
+                                </div>
+                                <div id="contact{{ forloop.counter0 }}">
+                                    <p class="contact-info">Phone Number: <a href="tel:{{ item.phone }}">{{ item.phone }}</a></p>
+                                    <p class="contact-info">Email Address: <a href="mailto:{{ item.email }}">{{ item.email }}</a></p>
+                                    <p class="contact-info">Website URL: <a href="{{ item.link }}">{{ item.link }}</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+        {% endfor %}
+    </div>
+
+{% else %}
 <div class="section no-pad-bot" id="index-banner">
     <div class="row center">
         <h5 class="header col s12 light">Smart Cities is a web based system which stores
@@ -21,7 +86,7 @@
 <div class="row">
     <div class="col s12 m4">
         <div class="icon-block">
-            <h2 class="center light-blue-text"><i class="material-icons">school</i></h2>
+            <h2 class="center light-blue-text"><i class="mdi mdi-school"></i></h2>
             <h5 class="center">Student</h5>
 
             <p class="light">When a student logs into the system, they can see colleges, libraries and other city
@@ -31,7 +96,7 @@
 
     <div class="col s12 m4">
         <div class="icon-block">
-            <h2 class="center light-blue-text"><i class="material-icons">business_center</i></h2>
+            <h2 class="center light-blue-text"><i class="mdi mdi-briefcase"></i></h2>
             <h5 class="center">Business</h5>
 
             <p class="light">When a business person logs into the system, they can view information about hotels,
@@ -41,7 +106,7 @@
 
     <div class="col s12 m4">
         <div class="icon-block">
-            <h2 class="center light-blue-text"><i class="material-icons">flight_takeoff</i></h2>
+            <h2 class="center light-blue-text"><i class="mdi mdi-airplane-landing"></i></h2>
             <h5 class="center">Tourist</h5>
             <p class="light">When a tourist logs into the system, the tourist can see hotels and other city
                 information.</p>
@@ -57,4 +122,5 @@
         <a href="/search" id="download-button" class="btn-large waves-effect waves-light">Get Started</a>
     {% endif %}
 </div>
+{% endif %}
 {% endblock %}
