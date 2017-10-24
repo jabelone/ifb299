@@ -87,7 +87,12 @@
       </div>
     </div>
     <div class="footer-copyright">
-      <div class="container">Copyright 2017</div>
+      <div class="container">
+        Copyright 2017.
+        {% if client_IP %}
+          Your IP ({{ client_IP }}) may be used for location personalisation purposes.
+        {% endif %}
+      </div>
     </div>
   </footer>
 
