@@ -9,6 +9,7 @@
     <h2>Saved successfully.</h2>
 {% endif %}
 
+{% if user.profile.is_admin %}
 <div class="card-tabs data-card-tabs">
     <ul class="tabs tabs-fixed-width">
         <li class="tab data-tab"><a class="active" href="#add">Add Data</a></li>
@@ -30,5 +31,8 @@
         <h4>Coming Soon...</h4>
     </div>
 </div>
+{% else %}
+    <h2>Error. You must have an administrative account to access this page.</h2>
+{% endif %}
 
 {% endblock %}

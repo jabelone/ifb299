@@ -45,10 +45,11 @@
 
         {% if user.is_authenticated %}
           <li><a class="menu-item" href="/search">Search</a></li>
+          {% if user.profile.is_admin %}<li><a class="menu-item" href="/data-admin">Data Admin</a></li>{% endif %}
           <li><a class="menu-item-mobile" href="/signout">Sign Out</a></li>
         {% endif %}
       </ul>
-      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi mdi-menu"></i></a>
     </div>
   </nav>
 
@@ -86,9 +87,7 @@
       </div>
     </div>
     <div class="footer-copyright">
-      <div class="container">
-      Made by <a class="orange-text text-lighten-3" href="/">IFB299 Group</a>
-      </div>
+      <div class="container">Copyright 2017</div>
     </div>
   </footer>
 
