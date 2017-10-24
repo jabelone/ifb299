@@ -10,8 +10,9 @@ USER_TYPES = (
 )
 
 DATA_TYPES = (
-    ('Select Category', 'Select Category'),
-    ('College', 'College'),
+    ('Select Category', 'Select Category'), # Default placeholder
+    ('All Categories', 'All Categories'), # Needed when searching for all entries
+    ('College', 'College/Schools'),
     ('Library', 'Library'),
     ('Industry', 'Industry'),
     ('Hotel', 'Hotel'),

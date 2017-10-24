@@ -9,7 +9,8 @@ USER_TYPES = (
 )
 
 DATA_TYPES = (
-    ('College', 'College'),
+    ('All Categories', 'All Categories'), # Needed when searching for all entries
+    ('College', 'College/Schools'),
     ('Library', 'Library'),
     ('Industry', 'Industry'),
     ('Hotel', 'Hotel'),
@@ -18,6 +19,25 @@ DATA_TYPES = (
     ('Museum', 'Museum'),
     ('Restaurant', 'Restaurant'),
     ('Mall', 'Mall')
+)
+
+CITIES = (
+    ('All Cities', 'All Cities'), # Needed when searching for all entries
+    ('Brisbane', 'Brisbane'),
+    ('Sydney', 'Sydney'),
+    ('Melbourne', 'Melbourne')
+)
+
+STATES = (
+    ('All States', 'All States'), # Needed when searching for all entries
+    ('QLD', 'QLD'),
+    ('NSW', 'NSW'),
+    ('VIC', 'VIC'),
+    ('ACT', 'ACT'),
+    ('TAS', 'TAS'),
+    ('SA', 'SA'),
+    ('NT', 'NT'),
+    ('WA', 'WA')
 )
 
 class Profile(models.Model):
@@ -34,6 +54,8 @@ class Data(models.Model):
     long_description = models.TextField()
     data_type = models.CharField(max_length=100, choices=DATA_TYPES)
     address = models.TextField()
+    city = models.CharField(max_length=100, choices=CITIES)
+    state = models.CharField(max_length=100, choices=STATES)
     phone = models.CharField(max_length=15)
     email = models.EmailField()
     link = models.URLField()
