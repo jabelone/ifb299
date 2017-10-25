@@ -78,12 +78,19 @@
         <div class="col l3 s12">
           <h5 class="white-text">FAQ</h5>
           <ul>
-            <li><a class="white-text" href="#!">How to...</a></li>
-            <li><a class="white-text" href="#!">What if...</a></li>
-            <li><a class="white-text" href="#!">Can I...</a></li>
-            <li><a class="white-text" href="#!">Lel...</a></li>
+            <li><a class="white-text" href="{% url 'home' %}">Home</a></li>
+            <li><a class="white-text" href="{% url 'howto' %}">How to...</a></li>
+            <li><a class="white-text" href="{% url 'whatif' %}">What if...</a></li>
+            <li><a class="white-text" href="{% url 'cani' %}">Can I...</a></li>
           </ul>
         </div>
+         <div class="col l3 s12">
+            <h5 class="white-text">Connect</h5>
+            <ul>
+              <li><a class="white-text" href="{% url 'contacts' %}">Contacts</a></li>
+              <li><a class="white-text" href="{% url 'signup' %}">Sign up</a></li>
+              <li><a class="white-text" href="{% url 'signin' %}">Sign in</a></li>
+            </ul>
       </div>
     </div>
     <div class="footer-copyright">
