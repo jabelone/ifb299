@@ -59,12 +59,12 @@ def home(request):
     client_IP = request.META['REMOTE_ADDR']
     data = None
     if request.user.is_authenticated:
-        if request.user.profile.user_type == "STUDENT":
+        if request.user.profile.user_type == "Student":
             data = Data.objects.all().filter(Q(data_type="School") | Q(data_type="College") | Q(data_type="Library"))
-        elif request.user.profile.user_type == "TOURIST":
+        elif request.user.profile.user_type == "Tourist":
             data = Data.objects.all().filter(Q(data_type="Hotel") | Q(data_type="Zoo") | Q(data_type="Museum") |
                                              Q(data_type="Restaurant") | Q(data_type="Mall"))
-        elif request.user.profile.user_type == "BUSINESS":
+        elif request.user.profile.user_type == "Business":
             data = Data.objects.all().filter(Q(data_type="Hotel") | Q(data_type="Industry") | Q(data_type="Restaurants"))
 
     return render(request, 'production/home.html', {'data': data, "client_IP": client_IP})
